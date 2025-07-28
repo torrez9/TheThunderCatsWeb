@@ -11,6 +11,25 @@
     --black: #000000;
 }
 
+.cost-notice {
+    font-size: 0.85em;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.service-area {
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-area i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
 body {
     background-color: var(--dark-color);
     color: var(--light-color);
