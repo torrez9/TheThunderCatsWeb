@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disco Movil ThunderCats</title>
-    <!-- Bootstrap 5.3 desde CDN -->
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Agrega esto en el head para los iconos -->
+
+    <!-- rutas para los estilos css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- ruta para el estilo css -->
     <link rel="stylesheet" href="estilos/styles.css">
     <link rel="stylesheet" href="estilos/modal.css">
 
@@ -281,6 +280,8 @@
     </section> -->
 
     <!-- Contact Section -->
+
+    <!-- Contact Section -->
     <section id="contacto" class="contact-section">
         <h2>Contáctanos</h2>
         <div class="contact-container">
@@ -305,20 +306,10 @@
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <div>
-                        <p>+505 5816 4037</p>
+                        <p><a href="https://wa.me/50558164037" target="_blank">+505 5816 4037</a></p>
                         <p>Lunes a Domingo, 8AM - 10PM</p>
                     </div>
                 </div>
-                
-                <!-- <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <p>contacto@thundercatsfiesta.com</p>
-                        <p>Reservas: reservas@thundercatsfiesta.com</p>
-                    </div>
-                </div> -->
                 
                 <div class="contact-detail">
                     <div class="contact-icon">
@@ -377,8 +368,95 @@
         </div>
     </section>
 
+
+    <!-- <section id="contacto" class="contact-section">
+        <h2>Contáctanos</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p><strong>Ubicación principal:</strong> Matagalpa, Nicaragua, Ciudad Darío</p>
+                        <p class="service-area">
+                            <i class="fas fa-truck-moving"></i> Servimos en todo el país<br>
+                            <span class="cost-notice">*El costo puede variar según la ubicación del evento</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <p>+505 5816 4037</p>
+                        <p>Lunes a Domingo, 8AM - 10PM</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <p>Horario de Oficina:</p>
+                        <p>Lunes a Viernes: 9AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                    <label for="event-type">Tipo de Evento</label>
+                    <select id="event-type" class="form-control" required>
+                        <option value="">Seleccione...</option>
+                        <option value="boda">Boda</option>
+                        <option value="cumpleaños">Cumpleaños</option>
+                        <option value="graduacion">Graduación</option>
+                        <option value="corporativo">Evento Corporativo</option>
+                        <option value="bautizo">Bautizo</option>
+                        <option value="concierto">Concierto Privado</option>
+                        <option value="reunion-familiar">Reunión Familiar</option>
+                        <option value="despedida">Despedida de Soltero/a</option>
+                        <option value="gastronomico">Evento Gastronómico</option>
+                        <option value="feria">Exposición/Feria</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
     <!-- Modal para selección de red social -->
-    <div id="socialModal" class="social-modal">
+    <!-- <div id="socialModal" class="social-modal">
         <div class="modal-content">
             <h3>¿Por qué red social deseas contactarnos?</h3>
             <p>Selecciona una opción para enviar tu mensaje</p>
@@ -394,7 +472,7 @@
             
             <button class="close-modal" id="closeModal">Cancelar</button>
         </div>
-    </div>
+    </div> -->
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -443,7 +521,8 @@
     </footer>
 
     <!-- Llamar al script al final del body -->
-     <script src="js/form-contact.js"></script>
+    <script src="js/limpiarformulario.js"></script>
+    <script src="js/form-contact.js"></script>
     <script src="js/copyright-year.js"></script>
 </body>
 </html>

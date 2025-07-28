@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form form');
-    const socialModal = document.getElementById('socialModal');
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const messengerBtn = document.getElementById('messengerBtn');
-    const closeModal = document.getElementById('closeModal');
-    
     // Datos del formulario que se capturarán
     let formData = {};
     
@@ -26,53 +21,56 @@ document.addEventListener('DOMContentLoaded', function() {
             message: document.getElementById('message').value
         };
         
-        // Mostrar modal de redes sociales
-        socialModal.style.display = 'flex';
-    });
-    
-    // Cerrar modal
-    closeModal.addEventListener('click', function() {
-        socialModal.style.display = 'none';
-    });
-    
-    // Enviar por WhatsApp
-    whatsappBtn.addEventListener('click', function() {
+        // Enviar directamente por WhatsApp sin mostrar modal
         const phoneNumber = '50558164037'; // Tu número sin el +
         const message = buildMessage();
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         
-        socialModal.style.display = 'none';
         window.open(url, '_blank');
+        
+        // Limpiar formulario
+        form.reset();
+        mostrarMensajeExito();
     });
     
-    // Enviar por Messenger
+    /*
+    // Código comentado relacionado con el modal (eliminado)
+    const socialModal = document.getElementById('socialModal');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const messengerBtn = document.getElementById('messengerBtn');
+    const closeModal = document.getElementById('closeModal');
+    
+    // Enviar por Messenger (código comentado)
     messengerBtn.addEventListener('click', function() {
-        const pageId = 'TU_PAGINA_DE_FACEBOOK'; // Reemplaza con tu página de Facebook
+        const pageId = 'https://www.facebook.com/profile.php?id=100093128200774';
         const message = buildMessage();
         const url = `https://m.me/${pageId}?text=${encodeURIComponent(message)}`;
         
         socialModal.style.display = 'none';
         window.open(url, '_blank');
+        
+        document.dispatchEvent(new Event('modalCerrado'));
     });
+    */
     
-    // Construir el mensaje
+    // Construir el mensaje para WhatsApp
     function buildMessage() {
-    const eventTypeText = document.querySelector(`#event-type option[value="${formData.eventType}"]`).textContent;
-    
-    return `🎵 *¡Hola Disco Móvil ThunderCats!* 🎉\n\n` +
-           `Mi nombre es *${formData.name}* y me encantaría contar con ustedes para mi ${eventTypeText.toLowerCase()}.\n\n` +
-           `📋 *Detalles del evento:*\n` +
-           `▫️ *Tipo:* ${eventTypeText}\n` +
-           `▫️ *Fecha tentativa:* [Indicar fecha si aplica]\n` +
-           `▫️ *Lugar aproximado:* [Indicar ubicación si conoces]\n\n` +
-           `📱 *Mis datos de contacto:*\n` +
-           `▫️ *Teléfono:* ${formData.phone}\n` +
-           `▫️ *Correo:* ${formData.email}\n\n` +
-           `💬 *Mensaje adicional:*\n"${formData.message}"\n\n` +
-           `✨ Espero poder contar con su talento para hacer de este evento algo increíble. \n` +
-           `¿Podrían darme más información sobre disponibilidad y paquetes? 😊\n\n` +
-           `¡Quedo atento(a) a su respuesta! 🙌`;
-}
+        const eventTypeText = document.querySelector(`#event-type option[value="${formData.eventType}"]`).textContent;
+        
+        return `🎵 *¡Hola Disco Móvil ThunderCats!* 🎉\n\n` +
+               `Mi nombre es *${formData.name}* y me encantaría contar con ustedes para mi ${eventTypeText.toLowerCase()}.\n\n` +
+               `📋 *Detalles del evento:*\n` +
+               `▫️ *Tipo:* ${eventTypeText}\n` +
+               `▫️ *Fecha tentativa:* [Indicar fecha si aplica]\n` +
+               `▫️ *Lugar aproximado:* [Indicar ubicación si conoces]\n\n` +
+               `📱 *Mis datos de contacto:*\n` +
+               `▫️ *Teléfono:* ${formData.phone}\n` +
+               `▫️ *Correo:* ${formData.email}\n\n` +
+               `💬 *Mensaje adicional:*\n"${formData.message}"\n\n` +
+               `✨ Espero poder contar con su talento para hacer de este evento algo increíble. \n` +
+               `¿Podrían darme más información sobre disponibilidad y paquetes? 😊\n\n` +
+               `¡Quedo atento(a) a su respuesta! 🙌`;
+    }
     
     // Validar formulario
     function validateForm() {
@@ -96,5 +94,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         return isValid;
+    }
+    
+    // Función para mostrar mensaje de éxito
+    function mostrarMensajeExito() {
+        const mensajeExito = document.createElement('div');
+        mensajeExito.className = 'mensaje-exito';
+        mensajeExito.innerHTML = `
+            <p>¡Mensaje enviado con éxito! <i class="fas fa-check-circle"></i></p>
+        `;
+        
+        const form = document.querySelector('.contact-form form');
+        form.prepend(mensajeExito);
+        
+        // Desaparecer después de 3 segundos
+        setTimeout(() => {
+            mensajeExito.style.opacity = '0';
+            setTimeout(() => mensajeExito.remove(), 500);
+        }, 3000);
     }
 });
