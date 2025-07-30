@@ -15,7 +15,7 @@
 }
 
 .footer-bottom a:hover {
-    color: #4CAF50; /* Cambia este color según tu paleta */
+    color: #cc0000; /* Cambia este color según tu paleta */
 }
 
 /* Efecto subrayado al pasar el mouse */
@@ -26,7 +26,7 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #4CAF50; /* Mismo color que el hover */
+    background-color: #cc0000; /* Mismo color que el hover */
     transition: width 0.3s ease;
 }
 
