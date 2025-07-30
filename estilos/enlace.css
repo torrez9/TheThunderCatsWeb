@@ -1,0 +1,35 @@
+/* Estilos para el footer */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #4CAF50; /* Cambia este color según tu paleta */
+}
+
+/* Efecto subrayado al pasar el mouse */
+.footer-bottom a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #4CAF50; /* Mismo color que el hover */
+    transition: width 0.3s ease;
+}
+
+.footer-bottom a:hover::after {
+    width: 100%;
+}
