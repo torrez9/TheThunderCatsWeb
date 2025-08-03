@@ -11,6 +11,71 @@
     --black: #000000;
 }
 
+/* informacion de cotacto */
+.contact-info {
+    background-color: var(--black);
+    color: var(--light-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 76, 76, 0.2);
+    transition: all 0.3s ease-in-out;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    margin-right: 1rem;
+    min-width: 30px;
+}
+
+.contact-info a {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.cost-notice {
+    font-size: 0.85em;
+    color: var(--gray-color);
+    margin-top: 4px;
+    font-style: italic;
+    display: block;
+}
+
+.service-area {
+    position: relative;
+    padding-left: 25px;
+    color: var(--light-color);
+}
+
+.service-area i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--primary-color);
+}
+
+
+
 .cost-notice {
     font-size: 0.85em;
     color: #666;

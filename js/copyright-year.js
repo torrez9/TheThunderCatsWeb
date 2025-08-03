@@ -6,11 +6,11 @@ function updateCopyrightYear() {
             yearElement.textContent = currentYear;
         }
     }
-
 // Ejecutar al cargar y ante cambios en el DOM (útil para SPA/PWA)
     document.addEventListener('DOMContentLoaded', updateCopyrightYear);
     const observer = new MutationObserver(updateCopyrightYear);
     observer.observe(document.body, { childList: true, subtree: true });
+
 
 // Ejecutar la función cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', updateCopyrightYear);
